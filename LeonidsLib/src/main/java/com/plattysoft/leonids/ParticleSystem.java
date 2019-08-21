@@ -131,8 +131,8 @@ public class ParticleSystem {
 		}
 	}
 
-	public ParticleSystem(ViewGroup parentView, Drawable... drawables){
-		this(parentView, drawables.length, 10000);
+	public ParticleSystem(ViewGroup parentView, List<Drawable> drawables){
+		this(parentView, drawables.size(), 10000);
 		for(Drawable drawable : drawables){
 			Bitmap bitmap = null;
 			if (drawable instanceof BitmapDrawable) {
