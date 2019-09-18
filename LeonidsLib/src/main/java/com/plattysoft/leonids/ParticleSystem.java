@@ -146,7 +146,7 @@ public class ParticleSystem {
 				drawable.draw(canvas);
 			}
 
-			mParticles.add(new Particle(bitmap));
+			mParticles.add(new Particle(bitmap, ttl));
 		}
 	}
 
