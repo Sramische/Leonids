@@ -69,7 +69,8 @@ public class ParticleSystem {
 
 		@Override
 		public void run() {
-			if(mPs.get() != null) {
+			final ParticleSystem ps = mPs.get();
+			if (ps != null) {
 				ParticleSystem ps = mPs.get();
 				ps.onUpdate(ps.mCurrentTime);
 				ps.mCurrentTime += TIMER_TASK_INTERVAL;
@@ -684,7 +685,10 @@ public class ParticleSystem {
 			if(listener != null && before && mActiveParticles.isEmpty())
 				listener.onAllParticlesDeactivated(this);
 		}
-		mDrawingView.postInvalidate();
+		final View dv = mDrawingView;
+		if (dv != null) {
+			dv.postInvalidate();
+		}
 	}
 
 	private void cleanupAnimation() {
