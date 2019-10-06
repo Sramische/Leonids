@@ -71,7 +71,6 @@ public class ParticleSystem {
 		public void run() {
 			final ParticleSystem ps = mPs.get();
 			if (ps != null) {
-				ParticleSystem ps = mPs.get();
 				ps.onUpdate(ps.mCurrentTime);
 				ps.mCurrentTime += TIMER_TASK_INTERVAL;
 			}
